@@ -1,7 +1,21 @@
-<!-- Outside -->
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/blog">Blog</a>
+---
+const pageTitle = "About Me";
+
+const identity = {
+  firstName: "Frederick",
+  country: "Ghana",
+  occupation: "Frontend Developer",
+  hobbies: ["Drawing", "Watching football", "Watching Movies"],
+};
+
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+
+const happy = true;
+const finished = false;
+const goal = 3;
+
+---
+
 
 <html>
     <head>
@@ -9,17 +23,41 @@
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
-        <title>About</title>
+        <title>{pageTitle}</title>
     </head>
     <body>
+        <a href="/">Home</a>
+        <a href="/about/">About</a>
+        <a href="/blog">Blog</a>
+
         <h1>About This Blog</h1>
         <p>
             Welcome to my Astro-powered blog! Here, I share insights, tutorials, and stories about web development and technology.
         </p>
 
-        <h2>About Me</h2>
+        <h2>{pageTitle}</h2>
         <p>
             I'm passionate about building fast, modern websites using cutting-edge frameworks like Astro. Follow along as I explore new tools and techniques!
         </p>
+        <p>Here are a few facts about me:</p>
+        <ul>
+        <li>My name is {identity.firstName}.</li>
+        <li>I live in {identity.country} and I work as a {identity.occupation}.</li>
+        {identity.hobbies.length >= 2 &&
+            <li>My hobbies are: {identity.hobbies[0]}, {identity.hobbies[1]} and {identity.hobbies[2]}</li>
+        }
+        </ul>
+        <p>My skills are:</p>
+        <ul>
+       {skills.map((skill)=>
+        <li>{skill}</li>
+       )}
+        </ul>
+
+        {happy && <p>I am happy to be learning Astro!</p>}
+
+        {finished && <p>I finished this tutorial!</p>}
+
+        {goal >= 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
     </body>
 </html>
