@@ -1,0 +1,44 @@
+html {
+    background-color: #f1f5f9;
+    font-family: sans-serif;
+  }
+  
+  body {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 80ch;
+    padding: 1rem;
+    line-height: 1.5;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  h1 {
+    margin: 1rem 0;
+    font-size: 2.5rem;
+  }
+
+  a {
+    color: #3b82f6;
+    text-decoration: none;
+    margin: 0 0.25rem;
+  }
+  a:hover {
+    text-decoration: underline;
+    color: navy;
+  }
+  footer {
+    text-align: center;
+    margin-top: 4rem;
+    padding: 2rem 0;
+    border-top: 1px solid #d9dfe7;
+    color: #5f7697;
+  }
+
+  .social{
+    display: inline-flex;
+    justify-content: center;
+    margin-top: 2px;
+  }

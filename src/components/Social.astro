@@ -1,0 +1,8 @@
+---
+import '../styles/global.css'
+const { platform, username } = Astro.props;
+---
+<div class="social">
+    <a href={`https://${platform}.com/${username}`} target="_blank" rel="noopener noreferrer">{platform}</a>
+</div>
+
